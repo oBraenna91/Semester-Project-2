@@ -26,10 +26,3 @@ export async function login(profile) {
         alert("Something went wrong, please try again!")
     }
 }
-
-const profileLoginTrial = {
-    "email" : "OleBra17268@stud.noroff.no",
-    "password" : "1234abcd",
-};
-
-login(profileLoginTrial);
