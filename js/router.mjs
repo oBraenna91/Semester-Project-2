@@ -5,5 +5,9 @@ export function router() {
     switch(path) {
         case '/html/login/':
             listeners.setLoginFormListener();
+        break;
+        case '/html/register/':
+            listeners.setRegisterFormListener();
+        break;
     }
 }
