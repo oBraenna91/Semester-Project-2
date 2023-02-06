@@ -30,10 +30,3 @@ export async function register(profile) {
     }
     return result;
 }
-
-const profileTrial = {
-    "name": "oleBraenna",
-    "email" : "OleBra17268@stud.noroff.no",
-    "password" : "1234abcd",
-};
-register(profileTrial);
