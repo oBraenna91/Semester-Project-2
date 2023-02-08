@@ -1,5 +1,6 @@
 import { authFetch } from "./authFetch.mjs";
 import { API_BASE_URL } from "../../constants/constants.mjs";
+import * as storage from "../../storage/index.mjs";
 
 const action = "listings";
 
@@ -21,3 +22,13 @@ export async function getListing(id) {
     const response = await authFetch(getListingURL);
     return await response.json();
 }
+
+const profile = storage.getFromLocal("profile");
+const userName = profile.name;
+
+export async function getProfileListings(name) {
+    const URL = `${API_BASE_URL}profile/${name}`
+    const response = await authFetch(URL);
+    return await response.json();
+}
+//getProfileListings(userName);
