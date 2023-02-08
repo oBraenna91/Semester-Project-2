@@ -3,10 +3,10 @@ import * as listeners from "../js/modules/handlers/index.mjs";
 export function router() {
     const path = location.pathname;
     switch(path) {
-        case '/html/login/':
+        case '/login/':
             listeners.setLoginFormListener();
         break;
-        case '/html/register/':
+        case '/register/':
             listeners.setRegisterFormListener();
         break;
     }
