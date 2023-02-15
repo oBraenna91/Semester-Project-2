@@ -1,0 +1,28 @@
+{
+  "name": "semester-project-2",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oBraenna91/Semester-Project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oBraenna91/Semester-Project-2/issues"
+  },
+  "homepage": "https://github.com/oBraenna91/Semester-Project-2#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha1"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}
