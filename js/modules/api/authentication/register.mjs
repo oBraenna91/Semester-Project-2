@@ -3,11 +3,9 @@ import { API_BASE_AUTH } from "../../constants/constants.mjs";
 const action = "register";
 const method = "POST";
 
-export async function register(profile) {
+export async function register(profileInfo) {
     const url = API_BASE_AUTH+action;
-    const body = JSON.stringify(profile);
-
-    console.log(url);
+    const body = JSON.stringify(profileInfo);
 
     const response = await fetch(url, {
         headers: {
