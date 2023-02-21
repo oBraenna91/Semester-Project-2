@@ -18,6 +18,5 @@ export async function getProfileInfo() {
     const response = await authFetch(profileURL);
     const profileInfo = await response.json();
     //console.log(profileInfo);
+    return profileInfo;
 }
-
-//getProfile();
