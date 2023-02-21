@@ -7,17 +7,18 @@ const method = "PUT";
 
 export async function updateAvatar(data) {
     const URL = `${API_BASE_URL}profiles/${profileName}/media`;
-    console.log(URL);
     const response = await authFetch(URL, {
         method,
         body: JSON.stringify(data)
     });
     const result = await response.json();
+    if(response.status === 200){
+        alert("Avatar updated successfully!")
+        location.reload();
+    }
+    else{
+        alert("Oops! Something went wrong! Please try again!")
+        location.reload();
+    }
     return result;
 }
-
-const avatar = {
-    "avatar" : "https://cdn4.vectorstock.com/i/1000x1000/93/48/male-paramedic-avatar-character-icon-vector-30899348.jpg"
-}
-
-//updateAvatar(avatar);
