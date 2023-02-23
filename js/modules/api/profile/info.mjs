@@ -1,6 +1,6 @@
 import * as storage from "../../storage/index.mjs";
 import { API_BASE_URL } from "../../constants/constants.mjs";
-import { authFetch } from "../listings/authFetch.mjs";
+import { authFetch } from "../actions/authFetch.mjs";
 
 export function profileName() {
     const profile = storage.getFromLocal("profile");
