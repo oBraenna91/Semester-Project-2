@@ -1,11 +1,13 @@
 import { API_BASE_URL } from "../../constants/constants.mjs";
-import { authFetch } from "../listings/authFetch.mjs";
+import { authFetch } from "../actions/authFetch.mjs";
 import * as storage from "../../storage/index.mjs";
-const profile = storage.getFromLocal("profile");
-const profileName = profile.name;
-const method = "PUT";
+
 
 export async function updateAvatar(data) {
+    const profile = storage.getFromLocal("profile");
+    const profileName = profile.name;
+    const method = "PUT";
+    
     const URL = `${API_BASE_URL}profiles/${profileName}/media`;
     const response = await authFetch(URL, {
         method,
