@@ -30,6 +30,7 @@ export async function profilePageListings(listings) {
                 <div id="panelsStayOpen-collapse${[listing.id]}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${[listing.id]}">
                     <div class="accordion-body bg-secondary text-white">
                         <p>${listing.description}</p>
+                        <a href="/listing/index.html?id=${listing.id}"> Click to view more </a>
                     </div>
                 </div>
         </div>
@@ -52,6 +53,7 @@ export async function profilePageBids(listings) {
                 <div id="panelsStayOpen-collapse${[listing.id]}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading${[listing.id]}">
                     <div class="accordion-body bg-secondary text-white">
                         <p>${listing['listing'].description}</p>
+                        <a href="/listing/index.html?id=${listing.id}"> Click to view more </a>
                     </div>
                 </div>
         </div>
