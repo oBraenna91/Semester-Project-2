@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav">
                     <li class="my-1"><a class="nav-item mx-2 text-white" href="/login/">Login</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/register/">Register</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/create/">Create</a></li>
                 </ul>
             </div>
         </div>
@@ -30,6 +30,12 @@
                     </div>
                   </div>
                 <h2></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="imageContainer">
+                </div>
             </div>
         </div>
         <div class="row">
@@ -50,7 +56,7 @@
                 <div class="card card-body">
                     <form id="makeABidForm">
                         <label for="makeBid" class="visually-hidden">Bid</label>
-                        <input type="text" name="amount" class="form-control" required title="enter amount you want to bid" 
+                        <input type="number" name="amount" class="form-control" required title="enter amount you want to bid" 
                         id="makeBid" placeholder="Enter amount">
                         <button type="submit" class="btn btn-primary mt-1" id="makeBidButton">Bid now</button>
                     </form>
