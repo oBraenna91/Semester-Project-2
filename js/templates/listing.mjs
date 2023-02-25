@@ -1,5 +1,6 @@
 const resultsContainer = document.querySelector("#listingPageContainer");
 const bidContainer = document.querySelector("#bidContainer");
+const imageContainer = document.querySelector("#imageContainer");
 
 export async function listingPageTemplate(listing) {
     if(resultsContainer) {
@@ -16,8 +17,19 @@ export async function listingPageTemplate(listing) {
 export async function listingPageBids(bidData) {
     return bidData.forEach(function(bid){
         bidContainer.innerHTML += 
-        `
+        `<div class="m-auto">
         - ${bid.amount}<br>
+        </div>
         `;
+    })
+}
+
+export async function listingPageImages(bidData) {
+    return bidData.forEach(function(bid){
+        imageContainer.innerHTML += 
+        `<div class="col-6 m-auto">
+            <img src="${bid}" class="img-fluid" style="width:100%"><br>
+         </div>
+            `;
     })
 }
