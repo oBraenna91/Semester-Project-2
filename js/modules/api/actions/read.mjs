@@ -6,9 +6,11 @@ const action = "listings";
 export async function getListings() {
     const getListningsURL = `${API_BASE_URL}${action}?_active=true`;
     const response = await authFetch(getListningsURL);
-    return await response.json();
+    const result = await response.json();
+    console.log(result);
+    return result;
+    //return await response.json();
 }
-
 
 export async function getListing(id) {
     if(!id) {
@@ -19,6 +21,5 @@ export async function getListing(id) {
     const result = await response.json();
     const bids = result.bids;
     return result;
-    //console.log(bids[0].amount);
     //return await response.json();
 }
