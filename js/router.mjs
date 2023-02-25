@@ -46,8 +46,9 @@ export function router() {
                 const post = await actions.getListing(id);
                 templates.listingPageTemplate(post);
                 const bids = post.bids;
-                console.log(post.bids);
+                const media = post.media;
                 templates.listingPageBids(bids);
+                templates.listingPageImages(media);
             }
             listingPage();
             handlers.setBidOnListingHandler();
