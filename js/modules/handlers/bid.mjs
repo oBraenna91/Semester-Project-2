@@ -16,7 +16,6 @@ export async function setBidOnListingHandler() {
             const amountToSend = {
                 "amount" : newAmount
             }
-            console.log(id, amountToSend);
             bidOnListing(id, amountToSend);
         })
     }
