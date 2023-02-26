@@ -13,9 +13,11 @@ export async function setBidOnListingHandler() {
             const formData = new FormData(listingForm);
             const amount = Object.fromEntries(formData.entries());
             const newAmount = parseInt(amount.amount);
-            console.log(newAmount);
-            console.log(id, amount);
-            bidOnListing(id, amount);
+            const amountToSend = {
+                "amount" : newAmount
+            }
+            console.log(id, amountToSend);
+            bidOnListing(id, amountToSend);
         })
     }
 }
