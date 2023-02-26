@@ -16,8 +16,8 @@ export async function bidOnListing(id, amount) {
     const result = await response.json();
     if (response.ok === true) {
         alert("You bid on this item!")
+    }if(response.ok != true) {
+        alert(`${result['errors'][0].message}`)
     }
-    console.log(response);
-    console.log(result);
     return result;
 }
