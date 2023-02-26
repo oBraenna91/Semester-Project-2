@@ -19,7 +19,6 @@ export async function getListing(id) {
     const getListingURL = `${API_BASE_URL}${action}/${id}?_bids=true`;
     const response = await authFetch(getListingURL);
     const result = await response.json();
-    const bids = result.bids;
     return result;
     //return await response.json();
 }
