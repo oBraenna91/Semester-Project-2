@@ -10,9 +10,6 @@ export function router() {
         case '/login/':
             handlers.setLoginFormListener();
         break;
-        case '/login.html':
-            handlers.setLoginFormListener();
-        break;
         case '/register/':
             handlers.setRegisterFormListener();
         break;
