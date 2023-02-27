@@ -13,7 +13,7 @@ export async function getProfileBids() {
 export async function getProfileListings() {
     const profile = storage.getFromLocal("profile");
     const name = profile.name;
-    const URL = `${API_BASE_URL}profiles/${name}/listings`
+    const URL = `${API_BASE_URL}profiles/${name}/listings?_active=true`
     const response = await authFetch(URL);
     return await response.json();
 }
