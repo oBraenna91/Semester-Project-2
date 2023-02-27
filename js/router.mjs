@@ -2,6 +2,7 @@ import * as templates from "../js/templates/index.mjs";
 import * as profile from "../js/modules/api/profile/index.mjs";
 import * as handlers from "../js/modules/handlers/index.mjs";
 import * as actions from "../js/modules/api/actions/index.mjs";
+import * as storage from "../js/modules/storage/index.mjs";
 
 export function router() {
     const path = location.pathname;
@@ -16,22 +17,27 @@ export function router() {
             handlers.setRegisterFormListener();
         break;
         case '/profile/':
-            async function profilePage() {
-                const profileInfo = await profile.getProfileInfo();
-                templates.profileInfoTemplate(profileInfo);
+            if(storage.getFromLocal("accessToken")) {
+                async function profilePage() {
+                    const profileInfo = await profile.getProfileInfo();
+                    templates.profileInfoTemplate(profileInfo);
+                }
+                profilePage();
+                async function profileListings() {
+                    const listings = await profile.getProfileListings();
+                    templates.profilePageListings(listings);
+                }
+                profileListings();
+                async function profileBids() {
+                    const bids = await profile.getProfileBids();
+                    templates.profilePageBids(bids);
+                }
+                profileBids();
+                handlers.setUpdateAvatarListener();
+            }else{
+                alert("You are not logged in! Redirecting")
+                window.location.href="/home/"
             }
-            profilePage();
-            async function profileListings() {
-                const listings = await profile.getProfileListings();
-                templates.profilePageListings(listings);
-            }
-            profileListings();
-            async function profileBids() {
-                const bids = await profile.getProfileBids();
-                templates.profilePageBids(bids);
-            }
-            profileBids();
-            handlers.setUpdateAvatarListener();
         break;
         case '/home/':
             async function homePage() {
@@ -58,7 +64,12 @@ export function router() {
             handlers.setLogoutFormListener();
         break;
         case '/create/':
-            handlers.setCreateListingListener();
+            if(storage.getFromLocal("accessToken")) {
+                handlers.setCreateListingListener();
+            }else{
+                alert("You are not logged in! Redirecting")
+                window.location.href="/home/"
+            }
         break;
     }
 }
