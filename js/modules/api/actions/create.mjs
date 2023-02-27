@@ -4,11 +4,6 @@ import { authFetch } from "../../api/actions/authFetch.mjs";
 const action = "listings";
 const method = "POST";
 
-const trialListing = {
-    "title" : "testuser911-listing",
-    "endsAt" : "2023-02-17T00:00:00.000Z"
-};
-
 export async function createListing(listingData) {
     const createListingURL = `${API_BASE_URL}${action}`;
 
@@ -17,10 +12,14 @@ export async function createListing(listingData) {
         body: JSON.stringify(listingData)
     });
     const result = await response.json();
-    if (response.ok === true) {
-        alert("Listing created!")
-    }
     console.log(response);
     console.log(result);
+    if (response.ok === true) {
+        alert("Listing created!");
+        window.location.href="/profile/";
+    }if(response.ok != true) {
+        alert(`${result['errors'][0].message}`)
+        location.reload();
+    }
     return result;
 }
