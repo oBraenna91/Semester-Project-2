@@ -6,7 +6,7 @@ export async function profileInfoTemplate(user) {
     if(infoContainer) {
         return infoContainer.innerHTML +=
         `   <div class="col-3 col-md-2 m-auto">
-                <img src="${user.avatar} class="img-fluid" style="width:100%">
+                <img src="${user.avatar} class="img-fluid" style="width:100%" alt="No avatar image provided">
             </div>
             <div class="d-flex-column justify-content-center align-self-center col-8 text-center mt-md-3">
                 <h2> Name: ${user.name} </h2>
@@ -22,7 +22,7 @@ export async function profilePageListings(listings) {
             listingContainer.innerHTML +=
         `
         <div class="card my-4 m-auto" style="width: 50%">
-            <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="alt">
+            <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
             <div class="card-body justify-content-center">
                 <h5 class="card-title text-center">${listing.title}</h5>
                 <div class="text-center">
@@ -41,7 +41,7 @@ export async function profilePageBids(listings) {
             bidsContainer.innerHTML +=
         `
         <div class="card my-4 m-auto" style="width: 50%">
-            <img src="${listing['listing'].media[0]}" class="card-img-top img-fluid" alt="alt">
+            <img src="${listing['listing'].media[0]}" class="card-img-top img-fluid" alt="No image provided">
             <div class="card-body justify-content-center">
                 <h5 class="card-title text-center">${listing['listing'].title}</h5>
                 <div class="text-center">
