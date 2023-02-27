@@ -21,8 +21,10 @@ export async function login(profile) {
     storage.saveToLocal("accessToken", accessToken);
     storage.saveToLocal("profile", user);
     if (response.status === 200) {
-        alert("You are now logged in!")
+        alert("You are now logged in!");
+        window.location.href="/profile";
     }else if(response.ok != true) {
-        alert("Something went wrong, please try again!")
+        alert("Something went wrong, please try again!");
+        location.reload();
     }
 }
