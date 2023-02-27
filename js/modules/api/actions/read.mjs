@@ -7,7 +7,6 @@ export async function getListings() {
     const getListningsURL = `${API_BASE_URL}${action}?_active=true`;
     const response = await authFetch(getListningsURL);
     const result = await response.json();
-    console.log(result);
     return result;
     //return await response.json();
 }
@@ -19,6 +18,10 @@ export async function getListing(id) {
     const getListingURL = `${API_BASE_URL}${action}/${id}?_bids=true`;
     const response = await authFetch(getListingURL);
     const result = await response.json();
+    if(response.ok != true) {
+        alert(`${result['errors'][0].message}`)
+        window.location.replace("/home/");
+    }
     return result;
     //return await response.json();
 }
