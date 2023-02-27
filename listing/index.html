@@ -16,24 +16,24 @@
             </button>
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav">
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/login/">Login</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/home/">Home</a></li>
                     <li class="my-1"><a class="nav-item mx-2 text-white" href="/create/">Create</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/profile/">Profile</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/login/">Login</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/register/">Register</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/logout/">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container mt-3">
         <div class="row">
-            <div class="col">
-                <div style="width: 100%;">
-                    <div id="listingPageContainer">
-                    </div>
-                </div>
+            <div class="col" id="listingPageContainer">
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <strong>Time Left</strong>
+                <h3 class="text-center">Time Left</h3>
                 <div id="timerContainer">
                 </div>
             </div>
@@ -44,27 +44,29 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col">
-                <h4>Bids</h4>
+                <h4 class="text-center">Bids</h4>
                 <div id="bidContainer">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class ="col">
+            <div class ="col text-center my-3">
                 <button class="button btn btn-primary" data-bs-toggle="collapse" data-bs-target="#bidInput" aria-expanded="false"
                  aria-controls="bidInput">Make a bid</button>
             </div>
         </div>
-        <div class="row collapse" id="bidInput">
+        <div class="row collapse mb-3" id="bidInput">
             <div class="col">
-                <div class="card card-body">
+                <div class="card card-body col-md-4 m-auto">
                     <form id="makeABidForm">
                         <label for="makeBid" class="visually-hidden">Bid</label>
                         <input type="number" name="amount" class="form-control" required title="enter amount you want to bid" 
                         id="makeBid" placeholder="Enter amount">
-                        <button type="submit" class="btn btn-primary mt-1" id="makeBidButton">Bid now</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mt-1" id="makeBidButton">Bid now</button>
+                        </div>
                     </form>
                 </div>
             </div>
