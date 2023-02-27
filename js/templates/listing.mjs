@@ -8,8 +8,8 @@ export async function listingPageTemplate(listing) {
     if(resultsContainer) {
         return resultsContainer.innerHTML +=
         `
-            <h3>Title: ${listing.title}</h3>
-            <p>Description: ${listing.description}</p>
+            <h3 class="text-center">Auction title: ${listing.title}</h3>
+            <p class="text-center">Auction description: ${listing.description}</p>
             
         `;
     }
@@ -30,9 +30,12 @@ export function listingTimerTemplate(listing) {
 
             timerContainer.innerHTML = 
             `
-            <p>${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds</p>
-            `
-        //console.log(days, "days", hours, "hours", minutes, "minutes", seconds, "seconds");
+            <p class="text-center">${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds</p>
+            `;
+            if(timeToEnd < 0) {
+                clearInterval(timer);
+                timerContainer.innerHTML = "This auction is finished";
+            }
         },
         1000);
     }
@@ -42,9 +45,13 @@ export function listingTimerTemplate(listing) {
 export async function listingPageBids(bidData) {
     return bidData.forEach(function(bid){
         bidContainer.innerHTML += 
-        `<div class="m-auto">
-        - ${bid.amount}<br>
-        <p>bid made by ${bid.bidderName}</p>
+        `
+        <div class="card col-8 col-md-2 mx-auto mt-2">
+            <div class="card-body">
+                <h5 class="card-title text-center">${bid.amount}</h5>
+                <br>
+                <h6 class="card-subtitle mb-2 text-muted text-center">bid made by ${bid.bidderName}</h6>
+            </div>
         </div>
         `;
     })
@@ -53,7 +60,7 @@ export async function listingPageBids(bidData) {
 export async function listingPageImages(bidData) {
     return bidData.forEach(function(bid){
         imageContainer.innerHTML += 
-        `<div class="col-6">
+        `<div class="col-6 mx-auto mt-3">
             <img src="${bid}" class="img-fluid" style="width:100%"><br>
          </div>
             `;
