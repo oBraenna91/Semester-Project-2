@@ -2,9 +2,6 @@ import { API_BASE_URL } from "../../constants/constants.mjs";
 import { authFetch } from "./authFetch.mjs";
 
 const method = "POST";
-const amount = {
-    "amount": 100
-};
 
 export async function bidOnListing(id, amount) {
     const listingURL = `${API_BASE_URL}listings/${id}/bids`;
@@ -18,6 +15,7 @@ export async function bidOnListing(id, amount) {
         alert("You bid on this item!")
     }if(response.ok != true) {
         alert(`${result['errors'][0].message}`)
+        location.reload();
     }
     return result;
 }
