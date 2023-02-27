@@ -16,8 +16,12 @@
             </button>
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav">
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/home/">Home</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/create/">Create</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/profile/">Profile</a></li>
                     <li class="my-1"><a class="nav-item mx-2 text-white" href="/login/">Login</a></li>
                     <li class="my-1"><a class="nav-item mx-2 text-white" href="/register/">Register</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/logout/">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -28,27 +32,29 @@
                 <h1>Profile</h1>
             </div>
         </div>
-        <div class="row d-md-flex" id="profile-info">
+        <div class="row d-flex flex-md-column" id="profile-info">
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
+    <div class="container mt-4">
+        <div class="row d-md-flex justify-content-center">
+            <div class="col col-md-auto text-center">
                 <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#updateInput" aria-expanded="false" 
             aria-controls="updateInput">Update avatar</button>
             </div>
-            <div class="col">
+            <div class="col col-md-auto text-center">
                 <a class="btn btn-primary" href="/create/index.html" role="button">Create new listing</a>
             </div>
         </div>
         <div class="row collapse" id="updateInput">
-            <div class="col">
+            <div class="col col-md-4 mx-auto my-3">
                 <div class="card card-body">
                     <form id="updateAvatarForm">
                         <label for="updateAvatarURL" class="visually-hidden">URL</label>
                         <input type="text" name="url" class="form-control" required title="must be a fully formed URL that links to a live and publicly accessible image." 
                         id="updateAvatarURL" placeholder="Enter URL">
-                        <button type="button" class="btn btn-primary mt-1" id="updateAvatarButton">Update</button>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary mt-1" id="updateAvatarButton">Update</button>
+                        </div>
                     </form>
                 </div>
             </div>
