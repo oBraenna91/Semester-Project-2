@@ -3,14 +3,23 @@ import { API_BASE_URL } from "../../constants/constants.mjs";
 
 const action = "listings";
 
+/**
+ * This function retrieves all active listings in an array.
+ * @returns the listings in an array.
+ */
+
 export async function getListings() {
     const getListningsURL = `${API_BASE_URL}${action}?_active=true`;
     const response = await authFetch(getListningsURL);
     const result = await response.json();
     return result;
-    //return await response.json();
 }
 
+/**
+ * This function retrieves a single listing with additional bidding information.
+ * @param {string} id is the ID of the listing. 
+ * @returns the listing with the additional bidding information.
+ */
 export async function getListing(id) {
     if(!id) {
         throw new Error("Requires Listing id")
@@ -23,5 +32,4 @@ export async function getListing(id) {
         window.location.replace("/home/");
     }
     return result;
-    //return await response.json();
 }
