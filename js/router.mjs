@@ -11,14 +11,12 @@ import * as storage from "../js/modules/storage/index.mjs";
 
 export function router() {
     const path = location.pathname;
-    switch(path) {
-        case '/login/':
+        if (path === '/login/'|| path === '/login/index.html') {
             handlers.setLoginFormListener();
-        break;
-        case '/register/':
+        } else if(path === '/register/' || path === '/register/index.html') {
             handlers.setRegisterFormListener();
-        break;
-        case '/profile/':
+        }
+        else if(path === '/profile/' || path === '/profile/index.html'){
             if(storage.getFromLocal("accessToken")) {
                 async function profilePage() {
                     const profileInfo = await profile.getProfileInfo();
@@ -35,15 +33,13 @@ export function router() {
                 alert("You are not logged in! Redirecting")
                 window.location.href="/home/"
             }
-        break;
-        case '/home/':
+        }else if(path === '/home/' || path === '/home/index.html') {
             async function homePage() {
                 const listings = await actions.getListings();
                 templates.homePageListings(listings);
             }
             homePage();
-        break;
-        case '/listing/index.html':
+        }else if(path === '/listing/index.html') {
             async function listingPage(){
                 const id = actions.extractID();
                 const post = await actions.getListing(id);
@@ -56,17 +52,14 @@ export function router() {
             }
             listingPage();
             handlers.setBidOnListingHandler();
-        break;
-        case '/logout/':
+        }else if(path === '/logout/' || path === '/logout/index.html') {
             handlers.setLogoutFormListener();
-        break;
-        case '/create/':
+        }else if(path === '/create/' || path === '/create/index.html') {
             if(storage.getFromLocal("accessToken")) {
                 handlers.setCreateListingListener();
             }else{
                 alert("You are not logged in! Redirecting")
                 window.location.href="/home/"
             }
-        break;
+        }
     }
-}
