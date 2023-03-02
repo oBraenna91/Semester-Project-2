@@ -1,5 +1,11 @@
 import { register } from "../api/authentication/register.mjs";
 
+/**
+ * This function sets an addEventListener to the registerFrom,
+ * extracts the form inputs and uses the regiser function to
+ * register the user.
+ */
+
 export function setRegisterFormListener() {
     const form = document.querySelector("#registerForm");
 
