@@ -3,6 +3,12 @@ const bidContainer = document.querySelector("#bidContainer");
 const imageContainer = document.querySelector("#imageContainer");
 const timerContainer = document.querySelector("#timerContainer");
 
+/**
+ * This function is a template for how the listing title and description will be
+ * displayed on the individual listings page.
+ * @param {object} listing is the specific listing that will be diplayed. 
+ * @returns the listing title and description on the page.
+ */
 export async function listingPageTemplate(listing) {
 
     if(resultsContainer) {
@@ -15,6 +21,12 @@ export async function listingPageTemplate(listing) {
     }
 }
 
+/**
+ * This function is a template for how the listing countdown timer will be
+ * displayed on the individual listings page.
+ * @param {object} listing is the specific listing whos countdown will be 
+ * calculated and displayed.
+ */
 export function listingTimerTemplate(listing) {
     if (timerContainer){
         const timer = setInterval(function() {
@@ -41,7 +53,12 @@ export function listingTimerTemplate(listing) {
     }
 }
         
-
+/**
+ * This function is a template for how the bids for the individual listing will be 
+ * displayed.
+ * @param {object} bidData is the bid objects containing the relevant information.
+ * @returns the bid and bidder information on the page.
+ */
 export async function listingPageBids(bidData) {
     return bidData.forEach(function(bid){
         bidContainer.innerHTML += 
@@ -57,11 +74,17 @@ export async function listingPageBids(bidData) {
     })
 }
 
-export async function listingPageImages(bidData) {
-    return bidData.forEach(function(bid){
+/**
+ * This function is a template for how the listing images will be displayed on the
+ * individual listing page.
+ * @param {Array} listing is the array of images from the specific listing. 
+ * @returns the images on the page. 
+ */
+export async function listingPageImages(listing) {
+    return listing.forEach(function(image){
         imageContainer.innerHTML += 
         `<div class="col-6 mx-auto mt-3">
-            <img src="${bid}" class="img-fluid" style="width:100%"><br>
+            <img src="${image}" class="img-fluid" style="width:100%"><br>
          </div>
             `;
     })
