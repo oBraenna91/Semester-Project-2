@@ -14,8 +14,8 @@ export async function listingPageTemplate(listing) {
     if(resultsContainer) {
         return resultsContainer.innerHTML +=
         `
-            <h3 class="text-center">Auction title: ${listing.title}</h3>
-            <p class="text-center">Auction description: ${listing.description}</p>
+            <h1 class="text-center text-secondary">${listing.title}</h1>
+            <p class="text-center text-white">${listing.description}</p>
             
         `;
     }
@@ -42,7 +42,7 @@ export function listingTimerTemplate(listing) {
 
             timerContainer.innerHTML = 
             `
-            <p class="text-center">${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds</p>
+            <p class="text-center text-white">${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds</p>
             `;
             if(timeToEnd < 0) {
                 clearInterval(timer);
@@ -63,11 +63,11 @@ export async function listingPageBids(bidData) {
     return bidData.forEach(function(bid){
         bidContainer.innerHTML += 
         `
-        <div class="card col-8 col-md-2 mx-auto mt-2">
+        <div class="card bg-primary border-secondary text-white col-8 col-md-2 mx-auto mt-2">
             <div class="card-body">
                 <h5 class="card-title text-center">${bid.amount}</h5>
                 <br>
-                <h6 class="card-subtitle mb-2 text-muted text-center">bid made by ${bid.bidderName}</h6>
+                <p class="card-subtitle mb-2 text-info text-center">bid made by ${bid.bidderName}</p>
             </div>
         </div>
         `;
