@@ -1,5 +1,11 @@
 const homePageListingContainer = document.querySelector("#homePageContainer");
 
+/**
+ * This function is a template for how the listings on the home page will be displayed.
+ * @param {Array} listings is the array of listings that will be displayed on the home page.
+ * @returns the listings as individual cards in the homePageListingContainer.
+ */
+
 export async function homePageListings(listings) {
     if(homePageListingContainer) {
         return listings.forEach(function(listing){
