@@ -1,5 +1,10 @@
 import { updateAvatar } from "../api/profile/update.mjs";
 
+/**
+ * This function sets an addEventListener to the updateAvatarForm,
+ * extracts the user input and uses the updateAvatar function to allow
+ * the user to update their avatar.
+ */
 export async function setUpdateAvatarListener() {
     const form = document.querySelector("#updateAvatarForm");
 
