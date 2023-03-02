@@ -4,6 +4,11 @@ import * as handlers from "../js/modules/handlers/index.mjs";
 import * as actions from "../js/modules/api/actions/index.mjs";
 import * as storage from "../js/modules/storage/index.mjs";
 
+/**
+ * This function will select which of the listeners that will be
+ * active by watching the location.pathname.
+ */
+
 export function router() {
     const path = location.pathname;
     switch(path) {
