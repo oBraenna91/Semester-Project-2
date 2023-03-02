@@ -34,36 +34,12 @@ export async function profilePageListings(listings) {
         return listings.forEach(function(listing){
             listingContainer.innerHTML +=
         `
-        <div class="card my-4 m-auto" style="width: 50%">
+        <div class="card bg-primary border-secondary my-4 m-auto" style="width: 50%">
             <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
             <div class="card-body justify-content-center">
                 <h5 class="card-title text-center">${listing.title}</h5>
                 <div class="text-center">
-                    <a href="/listing/index.html?id=${listing.id}" class="btn btn-primary">See more</a>
-                </div>
-            </div>
-        </div>
-        `;
-        })
-    }
-}
-
-/**
- * This function is a template for how the users bids will be displayed on the profile page.
- * @param {array} listings is the array of listings the user have bid on. 
- * @returns all the listings the user has bid on as cards on the profile page.
- */
-export async function profilePageBids(listings) {
-    if(bidsContainer) {
-        return listings.forEach(function(listing){
-            bidsContainer.innerHTML +=
-        `
-        <div class="card my-4 m-auto" style="width: 50%">
-            <img src="${listing['listing'].media[0]}" class="card-img-top img-fluid" alt="No image provided">
-            <div class="card-body justify-content-center">
-                <h5 class="card-title text-center">${listing['listing'].title}</h5>
-                <div class="text-center">
-                    <a href="/listing/index.html?id=${listing.id}" class="btn btn-primary">See more</a>
+                    <a href="/listing/index.html?id=${listing.id}" class="btn btn-secondary">See more</a>
                 </div>
             </div>
         </div>
