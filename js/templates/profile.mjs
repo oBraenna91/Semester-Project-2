@@ -35,7 +35,9 @@ export async function profilePageListings(listings) {
             listingContainer.innerHTML +=
         `
         <div class="card bg-primary border-secondary my-4 m-auto" style="width: 50%">
-            <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
+            <a href="/listing/index.html?id=${listing.id}">
+                <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
+            </a>
             <div class="card-body justify-content-center">
                 <h5 class="card-title text-center">${listing.title}</h5>
                 <div class="text-center">
