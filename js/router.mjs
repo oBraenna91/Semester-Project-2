@@ -30,11 +30,6 @@ export function router() {
                     templates.profilePageListings(listings);
                 }
                 profileListings();
-                async function profileBids() {
-                    const bids = await profile.getProfileBids();
-                    templates.profilePageBids(bids);
-                }
-                profileBids();
                 handlers.setUpdateAvatarListener();
             }else{
                 alert("You are not logged in! Redirecting")
