@@ -13,8 +13,9 @@ export async function setUpdateAvatarListener() {
 
         button.addEventListener("click", (event) => {
             event.preventDefault();
-            if(form.url.value === 0) {
+            if(form.url.value.length === 0) {
                 alert("Please provide a valid URL")
+                location.reload();
             }
             const avatarURL = form.url.value;
             const body = {
