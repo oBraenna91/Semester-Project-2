@@ -7,8 +7,9 @@
     <title>Create New Listing</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gmh3enn.css">
 </head>
-<body>
+<body class="bg-primary">
     <nav class="navbar navbar-dark bg-primary navbar-expand-md justify-content-between align-items-center"> 
         <div class="col ms-2">
             <button class="navbar-toggler border border-primary" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav">
@@ -16,17 +17,17 @@
             </button>
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav">
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/home/">Home</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/create/">Create</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/profile/">Profile</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/login/">Login</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/register/">Register</a></li>
-                    <li class="my-1"><a class="nav-item mx-2 text-white" href="/logout/">Logout</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/home/">Home</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/create/">Create</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/profile/">Profile</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/login/">Login</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/register/">Register</a></li>
+                    <li class="my-1"><a class="nav-item mx-2 text-secondary" href="/logout/">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container mt-4">
+    <div class="container mt-4 text-secondary">
         <div class="row">
             <div class="col d-flex flex-column justify-content-center align-items-center">
                 <h1>Create new listing</h1>
@@ -44,7 +45,7 @@
             </div>
             <div class="col-auto">
                 <h5 class="text-center">Auction ends at</h5>
-                <small class="text-muted">All times are local (Oslo, UTC+1)</small>
+                <small class="text-white">All times are local (Oslo, UTC+1)</small>
                     <select class="form-select mt-2" required aria-label="hour" id="createHour">
                     <option selected>Hour</option>
                     <option value="23">00</option>
@@ -185,8 +186,9 @@
                     <option value="12">December</option>
                     </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto text-center">
                 <h5>Media</h5>
+                <p class="text-white">All URL's must be a fully formed URL to a live accessible image</p>
             </div>
             <div class="col-auto d-flex flex-column" id="listingMedia">
                 <label for="listingMedia1" class="visually-hidden">Media</label>
@@ -201,7 +203,7 @@
                 <input type="text" class="form-control mt-2" name="media5" id="listingMedia5" placeholder="URL">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3" id="create-listing-button">Create</button>   
+                <button type="submit" class="btn btn-secondary mb-3" id="create-listing-button">Create</button>   
             </div>
         </form>
     </div>
