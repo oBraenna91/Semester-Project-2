@@ -14,7 +14,7 @@ export async function listingPageTemplate(listing) {
     if(resultsContainer) {
         return resultsContainer.innerHTML +=
         `
-            <h1 class="text-center text-secondary">${listing.title}</h1>
+            <h2 class="text-center text-secondary">${listing.title}</h2>
             <p class="text-center text-white">${listing.description}</p>
             
         `;
