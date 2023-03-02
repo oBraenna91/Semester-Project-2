@@ -1,5 +1,9 @@
 import { createListing } from "../api/actions/create.mjs";
 
+/**
+ * This function sets an addEventListener to the createListingForm, extracts the user form
+ * inputs and allows the user to create a listing using the createListing function.
+ */
 export async function setCreateListingListener() {
     const form = document.querySelector("#createListingForm");
 
@@ -14,7 +18,6 @@ export async function setCreateListingListener() {
             const hour = document.querySelector("#createHour");
             const minute = document.querySelector("#createMinute");
             const endsAt = `2023-${month.value}-${day.value}T${hour.value}:${minute.value}:00.000Z`
-            console.log(endsAt);
             const media = [];
             if(listingData.media1.length >= 1) {
                 media.push(listingData.media1);
