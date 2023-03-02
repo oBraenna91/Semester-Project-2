@@ -2,6 +2,13 @@ const infoContainer = document.querySelector("#profile-info");
 const listingContainer = document.querySelector("#profile-listings");
 const bidsContainer = document.querySelector("#profile-bids");
 
+/**
+ * This function is a template for how the profile information will be diplayed
+ * on the profile page.
+ * @param {object} user is the logged in users profile object. 
+ * @returns the information on the profile page.
+ */
+
 export async function profileInfoTemplate(user) {
     if(infoContainer) {
         return infoContainer.innerHTML +=
@@ -16,6 +23,12 @@ export async function profileInfoTemplate(user) {
     }
 }
 
+/**
+ * This function is a template for how the logged in users listings will be displayed
+ * on the profile page.
+ * @param {array} listings is the array of listings. 
+ * @returns the listings on the profile page.
+ */
 export async function profilePageListings(listings) {
     if(listingContainer) {
         return listings.forEach(function(listing){
@@ -35,6 +48,11 @@ export async function profilePageListings(listings) {
     }
 }
 
+/**
+ * This function is a template for how the users bids will be displayed on the profile page.
+ * @param {array} listings is the array of listings the user have bid on. 
+ * @returns all the listings the user has bid on as cards on the profile page.
+ */
 export async function profilePageBids(listings) {
     if(bidsContainer) {
         return listings.forEach(function(listing){
