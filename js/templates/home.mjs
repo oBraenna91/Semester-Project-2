@@ -11,12 +11,14 @@ export async function homePageListings(listings) {
         return listings.forEach(function(listing){
             homePageListingContainer.innerHTML +=
         `
-        <div class="card my-4 m-auto" style="width: 50%">
-            <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
+        <div class="card bg-primary border-secondary my-4 m-auto" style="width: 50%">
+            <a href="/listing/index.html?id=${listing.id}">
+                <img src="${listing.media[0]}" class="card-img-top img-fluid" alt="No image provided">
+            </a>
             <div class="card-body justify-content-center">
-                <h5 class="card-title text-center">${listing.title}</h5>
+                <h5 class="card-title text-center text-secondary">${listing.title}</h5>
                 <div class="text-center">
-                    <a href="/listing/index.html?id=${listing.id}" class="btn btn-primary">See more</a>
+                    <a href="/listing/index.html?id=${listing.id}" class="btn btn-secondary">See more</a>
                 </div>
             </div>
         </div>
