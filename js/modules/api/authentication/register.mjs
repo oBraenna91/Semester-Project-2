@@ -22,11 +22,9 @@ export async function register(profileInfo) {
         method,
         body,
     })
-    
-    console.log(response);
 
     const result = await response.json();
-    console.log(result);
+    
     if (response.status === 201) {
         alert("Profile registered successfully!");
         window.location.href="/login/";
