@@ -4,7 +4,7 @@
 
 ## Deployed on Netlify:
 
-https:// LINK GOES HERE
+https://semester-project-2-by-oab.netlify.app/home/
 
 ## Built With
 * HTML
